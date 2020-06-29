@@ -4,21 +4,24 @@ import getDrink from '../../theCocktailDB'
 
 
 
-const Details = (props) => {
-    console.log('props',props)
-    const [selectedDrink, setSelectedDrink] = useState({});
+const Details = ({ drink }) => {
+    // console.log('props',props)
+    // const [selectedDrink, setSelectedDrink] = useState({});
 
-    useEffect( async () => {
-        setSelectedDrink(await getDrink('random'))
-        // props.history.replace({pathname: `/details/${selectedDrink.id}`})
-    },[])
+    // useEffect( () => {
+    //     const setDrink = async () => {
+    //         setSelectedDrink(await getDrink('random'))
+    //     }
+    //     setDrink();
+    //     // props.history.replace({pathname: `/details/${selectedDrink.id}`})
+    // },[])
 
     return (
         <div className="details">
-            <img src={selectedDrink.thumbnail} alt=""/>
-            <h1>{selectedDrink.name}</h1>
-            <Ingredients ingredients={selectedDrink.ingredients}/>
-            <p>{selectedDrink.instructions}</p>
+            <img src={drink.thumbnail} alt=""/>
+            <h1>{drink.name}</h1>
+            <Ingredients ingredients={drink.ingredients}/>
+            <p>{drink.instructions}</p>
         </div>
     )
 }
