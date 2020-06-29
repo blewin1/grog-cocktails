@@ -9,13 +9,15 @@
         max-width: 100%;
     }
 
-    @media only screen and (min-width: 430px) {
+    @media only screen and (min-width: 430px) and (orientation: landscape) {
         display: grid;
         grid-template-columns: 5fr 3fr;
+        grid-template-rows: 1fr;
         img {
             // max-width: 400px;
             // flex: 0 1 auto;
             // width: auto;
+            height: auto;
         }
         .info {
             // flex: 1 1 300px;

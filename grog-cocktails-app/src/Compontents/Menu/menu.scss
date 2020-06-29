@@ -5,7 +5,7 @@
     align-items: center;
     overflow: hidden;
     flex-direction: column;
-    background-color: red;
+    background-color: $light-purple;
     width: 100%;
     a {
         padding: .5em;
@@ -14,7 +14,7 @@
         font-size: 25px;
         width: 100%;
         &:hover {
-            background-color: highlight($nav-color);
+            background-color: highlight($light-purple);
         }
     }
 }

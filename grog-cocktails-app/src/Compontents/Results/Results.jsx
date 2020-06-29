@@ -4,6 +4,7 @@ import './results.scss'
 
 
 const Results = ({ results }) => {
+    console.log('results', results)
     return (
         <div className="results">
             {results.length ? results.map((el, i) => {

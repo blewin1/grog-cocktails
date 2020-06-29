@@ -15,7 +15,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $nav-color;
+    background-color: $light-purple;
     height: 50px;
     width: 100%;
     padding-right: 10px;
@@ -27,7 +27,7 @@ nav {
         padding: 1em;
     }
 
-    @media only screen and (min-width: 500px) {
+    @media only screen and (min-width: 500px)  {
         // .hamburger-icon {
         //     display: none;
         // }

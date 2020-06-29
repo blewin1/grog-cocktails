@@ -2,7 +2,7 @@ import React from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 import Results from '../Results/Results'
 
-const SingleSearch = ({ results, handleSubmit, title='Search by Name' }) => {
+const SingleSearch = ({ results, handleSubmit, title='' }) => {
 
 
     return (
