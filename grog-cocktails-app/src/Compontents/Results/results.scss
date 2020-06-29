@@ -1,0 +1,23 @@
+@import '../../_config.scss';
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .result {
+        width: 150px;
+        border: 1px solid black;
+        background-color: darkslateblue;
+        color: $text-color;
+        margin: 5px;
+        border-radius: 5px;
+        
+        img{
+            width: 150px;
+            height: auto;
+            // border-radius: 5px;
+        }
+    }
+   
+}

@@ -14,11 +14,7 @@ const RandomDrink = () => {
         setDrink();
     },[])
 
-    return (
-        <div className="random-drink">
-            <Details drink={selectedDrink} />
-        </div>
-    )
+    return <Details drink={selectedDrink} />
 }
 
 export default RandomDrink

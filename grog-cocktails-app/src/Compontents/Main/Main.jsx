@@ -31,7 +31,7 @@ const Main = () => {
                 <Route exact path="/" component={Home} />
                 <Route path="/byName" render={() => <SingleSearch title='Search by Name' handleSubmit={handleNameSearch} results={drinkList} />} />
                 <Route path="/byIngredients" component={MultiSearch} />
-                <Route path="/byGlass" component={SingleSearch} />
+                <Route path="/byGlass" render={() => <SingleSearch title='Search by Glass' handleSubmit={handleNameSearch} results={drinkList} />} />
                 <Route path="/details/:id" component={DrinkByID} />
                 <Route path="/random" component={RandomDrink} />
                 <Route path="*" render={() => <Redirect to='/' />} />
