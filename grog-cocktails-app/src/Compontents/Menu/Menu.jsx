@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './menu.scss'
 
-const Menu = () => {
+const Menu = ({ menuItems, handleClick }) => {
     return (
-        <div className="menu">
-            <Link to="/byName">Find by Name</Link>
-            <Link to="/byIngredients">Find by Ingredients</Link>
-            <Link to="/random">Random Cocktail</Link>
-            <Link to="/byGlass">Find by Glass</Link>
+        <div className="menu"  onClick={handleClick}>
+            {menuItems.map((el, i) => {
+                return <Link to={el.path}>{el.text}</Link>
+            })}
         </div>
     )
 }

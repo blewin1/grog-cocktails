@@ -1,9 +1,13 @@
 import React from 'react'
+import './ingredients.scss'
 
-const Ingredients = () => {
+const Ingredients = ({ ingredients }) => {
+    console.log('ingredients',ingredients)
     return (
         <div className="ingredients">
-            <h4>Ingredients</h4>
+            {ingredients ? ingredients.map((el, i) => {
+                return <span>{el.amount} {el.ingredient}</span>
+            }) : ''}
         </div>
     )
 }

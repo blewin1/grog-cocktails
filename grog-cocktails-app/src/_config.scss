@@ -1,1 +1,7 @@
 $text-color: lightblue;
+$nav-color: red;
+
+@function highlight($color) {
+  // Used for the cube's top.
+  @return lighten( saturate( $color, 55% ), 15% );
+}
