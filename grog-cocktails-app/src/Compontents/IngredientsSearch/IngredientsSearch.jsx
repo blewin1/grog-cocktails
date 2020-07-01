@@ -120,9 +120,6 @@ const IngredientsSearch = () => {
 
     return (
         <div className='multi-search'>
-            <h2>IngredientsSearch</h2>
-
-            <p>{searchValidation}</p>
             <SearchBar enabled={searchEnabled} 
                       placeholder={searchEnabled ? 'Search for Ingredient' : "Please Wait..."}
                       handleSubmit={handleSubmit} />

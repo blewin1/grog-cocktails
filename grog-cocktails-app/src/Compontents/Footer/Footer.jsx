@@ -1,11 +1,13 @@
 import React from 'react'
 import './footer.scss'
+import { FlexWrapper } from '../Styles/Layout'
 
 const Footer = () => {
     return (
-        <div className="footer">
-            <h1>Footer</h1>
-        </div>
+        <FlexWrapper space-between className="footer">
+            <span>&copy; Ben Lewin 2020</span>
+            
+        </FlexWrapper>
     )
 }
 

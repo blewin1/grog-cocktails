@@ -1,8 +1,10 @@
+@import '../../_config.scss';
+
 .ingredient-icon {
     padding: .3em;
     border: 1px solid black;
     border-radius: 3px;
     background-color: firebrick;
-    color: white
+    color: $text-color;
     
 }

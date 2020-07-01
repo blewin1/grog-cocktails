@@ -3,13 +3,13 @@
 main {
     margin-top: 50px;
     margin-bottom: 40px;
-    // overflow-y: scroll;
+    overflow: none;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: $dark-green;
+    background-color: $background-color;
 
     color: $dark-purple;
 }

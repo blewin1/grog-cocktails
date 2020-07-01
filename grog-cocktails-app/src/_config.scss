@@ -1,11 +1,13 @@
 
-$nav-color: red;
+$nav-color: #2c3203;
 
 $dark-purple: #1B1129;
 $light-purple: #674E7C;
 $dark-green: #9E9A61;
 $light-green: #E9EDC9;
 $text-color: #E9EDC9;
+
+$background-color: #170222;
 
 @function highlight($color) {
   // Used for the cube's top.
