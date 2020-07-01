@@ -127,10 +127,10 @@ const IngredientsSearch = () => {
                       placeholder={searchEnabled ? 'Search for Ingredient' : "Please Wait..."}
                       handleSubmit={handleSubmit} />
             <FlexWrapper>
-                {searchTerms.map((el, i) => <IngredientSearchTermIcon first={i === 0}
+                {searchTerms.map((el, i) => <IngredientSearchTermIcon removable={i === 0 && searchEnabled}
                                                                       key={i}
                                                                       text={el}
-                                                                      handleClick={searchEnabled ? removeTerm : null} /> )}
+                                                                      handleClick={removeTerm} /> )}
             </FlexWrapper>
             <Results results={filteredDrinks.length || !isFirstSearch  ? filteredDrinks[0] : drinks} />
         </div>
