@@ -1,15 +1,15 @@
 import React from 'react'
-import ImgButton from '../ImgButton/ImgButton'
-import { Link } from "react-router-dom";
+import ImgLink from '../ImgLink/ImgLink'
+import { FlexWrapper } from '../Styles/Layout'
 
 const Home = () => {
     return (
-        <div>
-            <Link to="/byName"><ImgButton text="Find by Name" /></Link>
-            <Link to="/byIngredients"><ImgButton text="Find by Ingredients" /></Link>
-            <Link to="/random"><ImgButton text="Random Cocktail" /></Link>
-            <Link to="/byGlass"><ImgButton text="Find by Glass" /></Link>
-        </div>
+        <FlexWrapper column>
+            <ImgLink to="/byName">Find by Name</ImgLink>
+            <ImgLink to="/byIngredients">Find by Ingredients</ImgLink>
+            <ImgLink to="/random">Random Cocktail</ImgLink>
+            <ImgLink to="/byGlass">Find by Glass</ImgLink>
+        </FlexWrapper>
     )
 }
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Home from '../Home/Home'
 import SingleSearch from '../SingleSearch/SingleSearch'
-import MultiSearch from '../MultiSearch/MultiSearch'
+import IngredientsSearch from '../IngredientsSearch/IngredientsSearch'
 import DrinkByID from '../DrinkByID/DrinkByID'
 import RandomDrink from '../RandomDrink/RandomDrink'
 import { getDrinksByGlass, getDrinksByName } from '../../theCocktailDB'
@@ -20,9 +20,6 @@ const Main = () => {
         setDrinkList(drinks);
     }
 
-
-
-
     const handleNameSearch = async (name) => {
         const drinks = await getDrinksByName(name);
         setDrinkList(drinks);
@@ -34,7 +31,7 @@ const Main = () => {
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/byName" render={() => <SingleSearch title='Search by Name' handleSubmit={handleNameSearch} results={drinkList} />} />
-                <Route path="/byIngredients" component={MultiSearch} />
+                <Route path="/byIngredients" component={IngredientsSearch} />
                 <Route path="/byGlass" render={() => <SingleSearch title='Search by Glass' handleSubmit={handleGlassSearch} results={drinkList} />} />
                 <Route path="/details/:id" component={DrinkByID} />
                 <Route path="/random" component={RandomDrink} />

@@ -80,3 +80,16 @@ export const getDrinksByGlass = async (glass) => {
     return data;
 
 }
+
+export const getDrinksByIngredient = async (ingredient) => {
+    ingredient = formatString(ingredient);
+    console.log(ingredient)
+    const url = apiBase + `filter.php?i=${ingredient}`;
+    const res = await fetch(url);
+    const json = await res.json();
+    
+    const data = formatDrinkList(json.drinks);
+    console.log(data);
+    return data;
+
+}
