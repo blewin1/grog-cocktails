@@ -8,7 +8,7 @@ import { FlexWrapper } from '../Styles/Layout'
 const IngredientsSearch = () => {
 
     const [drinks, setDrinks] = useState([]);
-    const [filteredDrinks, setFilteredDrinks] = useState([[]])
+    const [filteredDrinks, setFilteredDrinks] = useState([])
     const [isFirstSearch, setIsFirstSearch] = useState(true);
     const [searchTerms, setSearchTerms] = useState([]);
     const [filterableIngredients, setFilterableIngredients] = useState([])
@@ -28,11 +28,7 @@ const IngredientsSearch = () => {
     },[])
 
     useEffect(() => {
-        console.log('asd',filteredDrinks)
-        const temp = filterDrink(filteredDrinks[0]);
-        setSearchValidation('')
-        console.log('asd2',temp)
-        setFilteredDrinks([temp, ...filteredDrinks])
+        
         
     },[searchTerms])
 
@@ -53,15 +49,15 @@ const IngredientsSearch = () => {
     
 
     //takes in an array of full drink objects and returns an array the drinks that mach the most recent search term
-    const filterDrink = (drinkList) => {
+    const filterDrink = (drinkList, searchTerm) => {
         if(drinkList.length === 0) {
             return drinkList;
         }
         const filtered = drinkList.filter(el => {
             const toReturn = el.ingredients.reduce((isFound, ingr) => {
                 console.log(ingr.ingredient.toLowerCase())
-                console.log((searchTerms[0] === ingr.ingredient.toLowerCase()))
-                return (isFound || searchTerms[0] === ingr.ingredient.toLowerCase());
+                console.log((searchTerm === ingr.ingredient.toLowerCase()))
+                return (isFound || searchTerm === ingr.ingredient.toLowerCase());
             }, false)
             console.log('FILTERED HAS INGR', toReturn)
             return toReturn
@@ -96,6 +92,10 @@ const IngredientsSearch = () => {
             setSearchEnabled(true);
         } else {
             setSearchTerms([ ingredient.toLowerCase(), ...searchTerms])
+            console.log('asd',filteredDrinks)
+            const tempFiltered = filterDrink(filteredDrinks[0], ingredient);
+            console.log('asd2',tempFiltered)
+            setFilteredDrinks([tempFiltered, ...filteredDrinks])
         }
         
         console.log(searchTerms)
@@ -130,9 +130,9 @@ const IngredientsSearch = () => {
                 {searchTerms.map((el, i) => <IngredientSearchTermIcon first={i === 0}
                                                                       key={i}
                                                                       text={el}
-                                                                      handleClick={removeTerm} /> )}
+                                                                      handleClick={searchEnabled ? removeTerm : null} /> )}
             </FlexWrapper>
-            <Results results={filteredDrinks[0].length || !isFirstSearch  ? filteredDrinks[0] : drinks} />
+            <Results results={filteredDrinks.length || !isFirstSearch  ? filteredDrinks[0] : drinks} />
         </div>
     )
 }
