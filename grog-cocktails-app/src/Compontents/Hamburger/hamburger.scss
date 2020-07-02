@@ -1,10 +1,12 @@
+@import '../../config';
+
 .hamburger-icon {
 
     .patty {
         height: 5px;
         width: 35px;
         margin: 6px;
-        background-color: black;
+        background-color: $dark-black;
         border-radius: 2px;
     }
 }

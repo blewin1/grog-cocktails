@@ -11,7 +11,7 @@ const Nav = () => {
     const menuItems = [
         { path: "/byName", text: "Find by Name"},
         { path: "/byIngredients", text: "Find by Ingredients"},
-        { path: "/random", text: "Random Coctail"},
+        { path: "/random", text: "Random Cocktail"},
         { path: "/byGlass", text: "Find by Glass"}
     ]
 
@@ -26,7 +26,7 @@ const Nav = () => {
     return (
         <header>
             <nav>
-                <Link to="/"><h1 id='site-title'>Grog</h1></Link>
+                <Link onClick={closeMenu} to="/"><h1 id='site-title'>Grog</h1></Link>
                 <Hamburger handleClick={toggleMenu} />
             </nav>
             {menuIsOpen ? <Menu menuItems={menuItems} handleClick={closeMenu}/> : ''}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./searchBar.scss"
 
-const SearchBar = ({ enabled, handleSubmit, placeholder="" }) => {
+const SearchBar = ({ enabled=true, handleSubmit, placeholder="" }) => {
 
     const [value, setValue] = useState('');
 

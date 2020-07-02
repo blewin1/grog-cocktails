@@ -118,10 +118,16 @@ const IngredientsSearch = () => {
         setSearchTerms(tempTerms);
     }
 
+    const placeholder = searchEnabled ? 
+                            (isFirstSearch ? 
+                                'Search by Ingredient' : 
+                                "Additional Ingredient")
+                            : "Please Wait...";
+
     return (
         <div className='multi-search'>
             <SearchBar enabled={searchEnabled} 
-                      placeholder={searchEnabled ? 'Search for Ingredient' : "Please Wait..."}
+                      placeholder={placeholder}
                       handleSubmit={handleSubmit} />
             <FlexWrapper>
                 {searchTerms.map((el, i) => <IngredientSearchTermIcon removable={i === 0 && searchEnabled}

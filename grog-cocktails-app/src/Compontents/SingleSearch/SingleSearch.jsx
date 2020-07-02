@@ -7,8 +7,7 @@ const SingleSearch = ({ results, handleSubmit, title='' }) => {
 
     return (
         <div className='single-search'>
-            <h2>{title}</h2>
-            <SearchBar handleSubmit={handleSubmit} />
+            <SearchBar handleSubmit={handleSubmit} placeholder={title} />
             <Results results={results} />
         </div>
     )

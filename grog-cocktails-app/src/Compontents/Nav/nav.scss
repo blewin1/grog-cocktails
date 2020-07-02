@@ -11,6 +11,7 @@ header {
     z-index: 100;
 }
 
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -20,11 +21,21 @@ nav {
     width: 100%;
     padding-right: 10px;
 
+    h1 {
+        font-family: Nickelodeon;
+        font-size: 40px;
+        color: $text-color;
+        font-weight: lighter;
+    }
+
+
     a {
         text-decoration: none;
-        color: $text-color;
+        color: #dedddf;
         font-size: 25px;
         padding: 1em;
+
+        
     }
 
     @media only screen and (min-width: 500px)  {
@@ -35,3 +46,4 @@ nav {
 
     }
 }
+

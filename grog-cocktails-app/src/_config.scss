@@ -1,15 +1,18 @@
 
-$nav-color: #2c3203;
+$nav-color: #335323;
 
-$dark-purple: #1B1129;
-$light-purple: #674E7C;
-$dark-green: #9E9A61;
-$light-green: #E9EDC9;
-$text-color: #E9EDC9;
+$dark-purple: #27033a;
+$light-purple: #93819d;
+$dark-green: #102b02;
+$light-green: #6d8462;
+$dark-black: #0D0113;
+$text-color: #C5cec0;
 
-$background-color: #170222;
+
+$background-color: $dark-black;
+
+
 
 @function highlight($color) {
-  // Used for the cube's top.
   @return lighten( $color, 15% );
 }

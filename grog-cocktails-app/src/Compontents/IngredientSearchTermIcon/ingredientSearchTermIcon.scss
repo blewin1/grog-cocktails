@@ -2,9 +2,21 @@
 
 .ingredient-icon {
     padding: .3em;
-    border: 1px solid black;
+    margin: 1em;
+    border: 2px solid $light-green;
     border-radius: 3px;
-    background-color: firebrick;
-    color: $text-color;
+    background-color: $nav-color;
+    color: $dark-black;
+    cursor: pointer;
+    text-transform: capitalize;
     
+    .close-icon{
+        padding-left: 10px;
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+}
+.removable {
+    border: 2px solid $nav-color;
+    background-color: $light-green;
 }

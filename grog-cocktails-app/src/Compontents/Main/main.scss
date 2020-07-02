@@ -3,13 +3,13 @@
 main {
     margin-top: 50px;
     margin-bottom: 40px;
-    overflow: none;
+    padding-top: 40px;
+    overflow: auto;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: $background-color;
-
-    color: $dark-purple;
+    color: $text-color;
 }

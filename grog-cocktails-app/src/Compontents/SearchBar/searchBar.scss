@@ -1,24 +1,42 @@
+@import '../../_config.scss';
+
+
 .search-bar {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
     padding: 10px;
+    
 
+    ::placeholder {
+        color: rgba(147, 129, 157, .5);
+        opacity: 1;
+    }
+    
     .field {
         background: transparent;
-        border: 2px solid black;
-        border-radius: 16px;
-        font-size: 24px;
+        background-color: rgba(39, 3, 58, .5);
+        border: 1px solid $light-purple;
+        border-radius: 5px;
         padding-left: 10px;
         text-align: center;
-        max-width: fit-content;
+        width: 70%;
+        max-width: 300px;
+        color: $text-color;
+        height: 1.5em;
+        font-size: 24px;
+        font-family: inherit;
+
     }
     .submit {
-        border-radius: 16px;
+        border: 2px solid $light-purple;
+        border-radius: 5px;
         width: fit-content;
         padding: 0 10px;
-        margin-top: 5px;
-        font-size: 20px;
-        background-color: rgba(98,204,255,1);
+        font-size: 24px;
+        background-color: #786284;
+        height: 1.5em;
+        font-family: inherit;
     }
 }
