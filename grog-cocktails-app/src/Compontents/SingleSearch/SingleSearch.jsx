@@ -5,7 +5,6 @@ import { getDrinksByGlass, getDrinksByName } from '../../theCocktailDB'
 
 const SingleSearch = ({ type, title='' }) => {
 
-    // const [selectedDrink, setSelectedDrink] = useState({});
     const [drinkList, setDrinkList] = useState([]);
     const [searchType, setSearchType] = useState('')
 
