@@ -18,7 +18,8 @@ const SearchBar = ({ enabled=true, handleSubmit, placeholder="" }) => {
         <div className="search-bar">
             <form onSubmit={submitForm}>
                 <input className="field" type="text" placeholder={placeholder} value={value} onChange={handleChange} disabled={!enabled} />
-                <input className="submit" type="submit" />
+                <button className="submit" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                
             </form>
         </div>
     );
