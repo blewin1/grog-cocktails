@@ -24,7 +24,6 @@ const SingleSearch = ({ type, title='' }) => {
 
     const handleGlassSearch = async (name) => {
         const drinks = await getDrinksByGlass(name);
-        console.log('glass-drinks' , drinks)
         setDrinkList(drinks);
     }
 

@@ -6,8 +6,6 @@ import name from '../../name.jpg'
 import ingredients from '../../ingredients.jpg'
 import glass from '../../glass.jpg'
 
-console.log('image', random)
-
 const Home = () => {
     return (
         <FlexWrapper column>

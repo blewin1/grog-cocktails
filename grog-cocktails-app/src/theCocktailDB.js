@@ -40,17 +40,28 @@ export const getDrink = async (id) => {
         url += 'lookup.php?i=' + id;
     }
     const res = await fetch(url);
-    const data = await res.json();
-    return formatDrink(data.drinks[0]);
+    let json;
+    try {
+        json = await res.json();
+    } catch (e) {
+        //If there is no response, return an empty object
+        return {};
+    }
+    return formatDrink(json.drinks[0]);
 }
 
 export const getDrinksByName = async (name) => {
     name = formatString(name);
     const url = apiBase + `search.php?s=${name}`;
     const res = await fetch(url);
-    const json = await res.json();
-    console.log(json)
-    let data = {};
+    let json;
+    try {
+        json = await res.json();
+    } catch (e) {
+        //If there is no response, return an empty array
+        return [];
+    }
+    let data = [];
     if (json.drinks){
         data = await json.drinks.map(el => formatDrink(el))
     }
@@ -70,26 +81,30 @@ const formatDrinkList = (list) => {
 
 export const getDrinksByGlass = async (glass) => {
     glass = formatString(glass);
-    console.log(glass)
     const url = apiBase + `filter.php?g=${glass}`;
+
     const res = await fetch(url);
-    const json = await res.json();
-    
-    const data = formatDrinkList(json.drinks);
-    console.log(data);
-    return data;
+    let json;
+    try {
+        json = await res.json();
+    } catch (e) {
+        //If there is no response, return an empty array
+        return [];
+    }
+    return formatDrinkList(json.drinks);
 
 }
 
 export const getDrinksByIngredient = async (ingredient) => {
     ingredient = formatString(ingredient);
-    console.log(ingredient)
     const url = apiBase + `filter.php?i=${ingredient}`;
     const res = await fetch(url);
-    const json = await res.json();
-    
-    const data = formatDrinkList(json.drinks);
-    console.log(data);
-    return data;
-
+    let json;
+    try {
+        json = await res.json();
+    } catch (e) {
+        //If there is no response, return an empty array
+        return [];
+    }
+    return formatDrinkList(json.drinks);
 }

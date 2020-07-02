@@ -16,7 +16,6 @@ const IngredientsSearch = () => {
     const [searchEnabled, setSearchEnabled] = useState(true);
 
     useEffect(()=> {
-        console.log('filtered Drinks Change', filteredDrinks)
         if(filteredDrinks.length[0] === 0 && searchTerms.length !== 0) {
             setIsFirstSearch(true)
             setDrinks([])
@@ -55,14 +54,10 @@ const IngredientsSearch = () => {
         }
         const filtered = drinkList.filter(el => {
             const toReturn = el.ingredients.reduce((isFound, ingr) => {
-                console.log(ingr.ingredient.toLowerCase())
-                console.log((searchTerm === ingr.ingredient.toLowerCase()))
                 return (isFound || searchTerm === ingr.ingredient.toLowerCase());
             }, false)
-            console.log('FILTERED HAS INGR', toReturn)
             return toReturn
         })
-        console.log('FILTERDRINKEND', filtered)
         
         return filtered;
     }
@@ -92,19 +87,13 @@ const IngredientsSearch = () => {
             setSearchEnabled(true);
         } else {
             setSearchTerms([ ingredient.toLowerCase(), ...searchTerms])
-            console.log('asd',filteredDrinks)
             const tempFiltered = filterDrink(filteredDrinks[0], ingredient);
-            console.log('asd2',tempFiltered)
             setFilteredDrinks([tempFiltered, ...filteredDrinks])
         }
-        
-        console.log(searchTerms)
-        console.log('filterable', filterableIngredients)
     }
 
     const removeTerm = () => {
         const tempTerms = searchTerms.slice(1);
-        console.log('removeterm', tempTerms)
 
         const tempFilteredDrinks = filteredDrinks.slice(1);
         setFilteredDrinks(tempFilteredDrinks)
