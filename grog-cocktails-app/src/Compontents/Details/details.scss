@@ -19,21 +19,19 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding-bottom: 10px;
+        padding: 10px 0;
     }
 
 
     @media only screen and (orientation: landscape) {
         flex-direction: row;
         height: 100%;
-        justify-content: space-evenly;
         img {
             max-height: 100%;;
         }
         .info {
             max-width: 400px;
             margin: auto;
-            flex-grow: 0;
         }
     }
 }

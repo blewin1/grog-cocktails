@@ -27,7 +27,7 @@ const Nav = () => {
         <header>
             <nav>
                 <Link onClick={closeMenu} to="/"><h1 id='site-title'>Grog</h1></Link>
-                <Menu horizontal={true} menuItems={menuItems} />
+                <Menu horizontal={true} menuItems={menuItems} handleClick={closeMenu} />
                 <Hamburger handleClick={toggleMenu} />
             </nav>
             {menuIsOpen ? <Menu menuItems={menuItems} handleClick={closeMenu}/> : ''}

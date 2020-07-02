@@ -1,4 +1,10 @@
+@import '../../config';
+
 .ingredients {
     display: flex;
     flex-direction: column;
+    padding: 8px 0;
+    margin: 5px 0;
+    border-top: 1px solid $light-purple;
+    border-bottom: 1px solid $light-purple;
 }
