@@ -3,8 +3,8 @@
 .menu {
     display: flex;
     align-items: center;
-    overflow: hidden;
     flex-direction: column;
+    overflow: hidden;
     background-color: $light-green;
     width: 100%;
     a {
@@ -16,5 +16,28 @@
         &:hover {
             background-color: highlight($light-green);
         }
+    }
+
+}
+.horizontal {
+    display: none;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    a {
+        font-size: 20px;
+        width: fit-content;
+        color: $text-color;
+        border-left: 1px solid $text-color;
+    }
+    background-color: $nav-color;
+
+    @media only screen and (min-width: 900px) {
+        display: flex;
+    }
+}
+.vertical {
+    @media only screen and (min-width: 900px) {
+        display: none;
     }
 }
